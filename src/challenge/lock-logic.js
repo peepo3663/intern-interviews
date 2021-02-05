@@ -44,8 +44,7 @@ function _checkIfAllLocksAreMatch () {
   lockState.locked = _checkEqualLockNumber(lockState.wheels)
 
   if (lockState.locked === false) {
-    console.log('redirect is called')
-    redirect('larry-lobster')
+    redirect('my-profile')
   }
 }
 
