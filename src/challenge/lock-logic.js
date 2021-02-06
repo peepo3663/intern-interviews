@@ -35,7 +35,15 @@ function changeDialValue (index, incrementBy) {
 }
 
 function _checkEqualLockNumber (combination) {
-  const shouldUnlocked = lockState.wheels[0] === SECRET_COMBO[0] && lockState.wheels[1] === SECRET_COMBO[1] && lockState.wheels[2] === SECRET_COMBO[2] && lockState.wheels[3] === SECRET_COMBO[3]
+  let i
+  let shouldUnlocked = true
+  for (i = 0; i < SECRET_COMBO.length; i++) {
+    /* If one of the combination is not the same as SECRET_COMBO, It should not be unlocked. */
+    if (combination[i] !== SECRET_COMBO[i]) {
+      shouldUnlocked = false
+      break
+    }
+  }
 
   return !shouldUnlocked
 }
